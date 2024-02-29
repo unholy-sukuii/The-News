@@ -1046,7 +1046,7 @@ cursor: pointer;
   width: 100%;
   height: 50%;
   padding: 1rem 0;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 #more-around .main .right-container .bottom .flex-container{
@@ -1099,19 +1099,19 @@ cursor: pointer;
     flex-direction: row-reverse;
   }
   #more-around .main .left-list h3{
-    font-size: 15px;
+    font-size: 13px;
   }
   #more-around .main .left-list .list-card .img{
     display: none;
   }
   #more-around .main .left-list .list-card .text p{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   #more-around .main .left-list .list-card .text{
     width: 100%;
     padding: 0;
   }
-  #more-around .main .left-list .list-card .text a{
+  #more-around .main .left-list .list-card .text p i {
     font-size: 0.5rem;
   }
   #more-around .main .right-container .top{
@@ -1122,29 +1122,68 @@ cursor: pointer;
     height: 250px;
   }
 
-  #more-around .main .right-container .top .text{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    background:linear-gradient(to right,rgba(0,0,0,0.8),rgba(255,255,255,0.1));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-    padding-right: 1rem;
-    
+  #more-around .main .right-container .bottom .flex-container .card h4{
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+    font-weight: 500;
+    margin-left: 0px;
+    margin-bottom: 3px;
   }
+
+  #more-around .main .right-container .bottom .flex-container .card{
+    padding: 0;
+  }
+
+  #more-around .main .right-container .bottom .flex-container .card span{
+    margin-left: 0px;
+  }
+
 }
 
-@media (max-width:500px) {
-  #more-around .main{
+@media (max-width:550px) {
+  #more-around .main .left-list{
+    display: none;
   }
-  #more-around .main .right-container .top{
+  #more-around .main .right-container {
+    width: 100%;
+  }
+  #more-around .main .right-container .top .text h3{
+    color: whitesmoke;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid red;
+   
+  }
+  #more-around .main .right-container .top .text p{
+    font-size: 0.8rem;
+  }
+  #more-around .main .right-container .bottom .flex-container {
+    border: 2px solid blue;
+    gap: 10px;
+    padding: 0px;
+    height: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 
+  #more-around .main .right-container .bottom .flex-container .card{
+    border: 2px solid red;
+    width: 48%;
+    margin: 0px;
   }
-  #more-around .main .right-container .top .image-back{
+  #more-around .main .right-container .bottom{
+    width: 100%;
+    /* height: 50%; */
+    padding:  0px;
+    border: 2px solid red;
+  }
+  #more-around .main .right-container .bottom .flex-container .card img{
+    width: 100%;
+    height: 40%;
+    max-height: 75px;
+    max-width:75px ;
+    margin: 0 auto;
+    filter: sepia(1);
+  }
 
-  }
 }
