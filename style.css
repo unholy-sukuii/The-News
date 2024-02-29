@@ -910,8 +910,18 @@ cursor: pointer;
 
 #more-around{
   width: 100%;
+  max-width: 1188px;
+  margin: 0 auto;
   /* border: 2px solid red; */
 }
+#more-around .more-head{
+  border-left: 5px solid rgb(136, 12, 12);
+  padding-left: 1rem;
+  justify-self: left;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+  margin-left: 0.5rem;}
 
 #more-around .main{
   width: 100%;
@@ -919,8 +929,10 @@ cursor: pointer;
   margin: auto;
   display: flex;
   justify-content: space-between;
+  /* border: 2px solid red; */
+  
   padding: 0.5rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 
 }
 
@@ -1186,4 +1198,98 @@ cursor: pointer;
     filter: sepia(1);
   }
 
+}
+
+
+
+#entertainment{
+  width: 100%;
+
+}
+#entertainment .container  {
+  /* border: 2px solid red; */
+} 
+
+#entertainment .container .left {
+  /* border: 2px solid black; */
+  width: 48%;
+} 
+#entertainment .container .left .top{
+  width: 100%;
+  position: relative;
+}
+#entertainment .container .left .top{
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+  /* position: relative; */
+}
+#entertainment .container .left .top .image-back{
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  height: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: flex-end;
+
+}
+#entertainment .container .left .top .image-back img{
+  position: absolute;
+  filter: sepia(50);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+
+#entertainment .container .left .top .text{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background:linear-gradient(to right,rgba(0,0,0,0.8),rgba(255,255,255,0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+  padding-right: 3rem;
+  
+}
+#entertainment .container .left .top .text h3{
+  color: whitesmoke;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-left: 5px solid red;
+  padding-left: 1rem;
+ 
+}
+
+#entertainment .container .left .top .text p{
+  color: antiquewhite;
+}
+
+
+
+
+
+
+
+#finance .container{
+  flex-direction: column;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+  gap: 0px;
+  padding-bottom: 0.5rem;
+}
+#finance .container h3{
+  border-left: 5px solid rgb(136, 12, 12);
+  padding-left: 1rem;
+  /* border: 2px solid red; */
+  justify-self: left;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-left: 0.5rem;
 }
