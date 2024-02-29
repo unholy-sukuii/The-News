@@ -408,23 +408,23 @@ let sportSection = async(articles) =>{
 
 
 
-(async () => {
-  try {
-    let articles = await getNews()
-    let articlesTwo = await newsquery()
-    let businessNews = await getBusiness()
-    let sportsNews = await getSports()
-    console.log(businessNews)
-    dynamicSlide(articles)
-    dynamicList(articlesTwo)
-    dynamicMain(articlesTwo);
-    businessSection(businessNews)
-    sportSection(sportsNews)
-  } catch (err) {
-    console.error("error fetching data...", err)
-  }
-}
-)();
+// (async () => {
+//   try {
+//     let articles = await getNews()
+//     let articlesTwo = await newsquery()
+//     let businessNews = await getBusiness()
+//     let sportsNews = await getSports()
+//     console.log(businessNews)
+//     dynamicSlide(articles)
+//     dynamicList(articlesTwo)
+//     dynamicMain(articlesTwo);
+//     businessSection(businessNews)
+//     sportSection(sportsNews)
+//   } catch (err) {
+//     console.error("error fetching data...", err)
+//   }
+// }
+// )();
 
 
 
