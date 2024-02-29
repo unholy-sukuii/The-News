@@ -1,3 +1,25 @@
+// Swiper JS
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+
+
+
 // const { Expo } = require("gsap")
 
 let input = document.querySelector(".top-left input");
@@ -5,14 +27,18 @@ let search = document.querySelector("#search");
 
 // console.log(input)
 
+
+
+
 let dateBar = document.querySelector("#date");
 let timeBar = document.querySelector("#timeBar");
 let dayBar = document.querySelector("#day");
 let temp = document.querySelector("#temperature")
-// console.log(temp)
 
-// console.log(dateBar, timeBar, dayBar);
 
+
+
+// Date
 const months = [
   "January",
   "February",
@@ -38,19 +64,42 @@ const days = [
 ];
 const d = new Date("2024-02-28");
 let month = months[d.getMonth()];
-// console.log(month);
 let day = days[d.getDay()];
 
 dateBar.innerText = `${d.getFullYear()} ${month} ${d.getDate()}`;
 dayBar.innerText = `${day}`;
 
+// Search bar vanish
+
+let count = true;
+search.addEventListener("click", () => {
+  if (count) {
+    // console.log("works");
+    gsap.to(input, {
+      width: "100%",
+      ease: Expo.easeInOut,
+      duration: 1,
+    });
+    count = false;
+  } else {
+    // console.log("clicked again");
+    gsap.to(input, {
+      width: "0%",
+      ease: Expo.easeInOut,
+      duration: 1,
+    });
+    count = true;
+  }
+});
 
 
-setInterval(showTime, 1000);
 
-// Defining showTime funcion
+
+
+// Getting current time and date
+
 function showTime() {
-  // Getting current time and date
+
   let time = new Date();
   let hour = time.getHours();
   let min = time.getMinutes();
@@ -75,20 +124,7 @@ function showTime() {
   timeBar.innerText = currentTime;
 }
 
-// showTime();
-
-
-
-
-
-
-
-
-
-
-
-
-
+setInterval(showTime, 1000);
 
 
 // Weather API
@@ -115,60 +151,11 @@ let getWeather = async (city) => {
   }
 }
 
-// getWeather('Hetauda');
+getWeather('Hetauda');
 
 
 
 
-
-
-// Calling showTime function at every second
-
-
-
-// Search bar vanish
-let count = true;
-search.addEventListener("click", () => {
-  if (count) {
-    console.log("works");
-    gsap.to(input, {
-      width: "100%",
-      ease: Expo.easeInOut,
-      duration: 1,
-    });
-    count = false;
-  } else {
-    // console.log("clicked again");
-    gsap.to(input, {
-      width: "0%",
-      ease: Expo.easeInOut,
-      duration: 1,
-    });
-    count = true;
-  }
-});
-
-
-
-
-// Swiper JS
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 20,
-  loop: true,
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
 
 
 
@@ -183,23 +170,15 @@ const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&apike
 let slides = document.querySelector('.swiper-wrapper')
 
 
-
-console.log(slides);
-
-// {/* <div class="slides">
-// <div class="text-section">
-//   <h2>News Title Here</h2>
-//   <p> */}
-
 let getNews = async () => {
   try {
 
     let reply = await fetch(`https://newsapi.org/v2/everything?q=world&pageSize=9&apikey=${API_KEY}`);
     let data = await reply.json()
     // console.log(data.articles)
-    console.log(data)
+    // console.log(data)
     let articles = data.articles
-    console.log(articles.length)
+    // console.log(articles.length)
     return articles;
 
   } catch (err) {
@@ -208,25 +187,59 @@ let getNews = async () => {
 
 }
 
-let newsquery =async() =>{
-  try{
-      const apiURL = `https://newsapi.org/v2/everything?q=palestine&pageSize=4&apikey=${API_KEY}`
-      const response = await fetch(apiURL);
-      let data = await response.json();
-      console.log("dynamic list worked")
-      let articles = data.articles
-      return articles;
+let newsquery = async () => {
+  try {
+    const apiURL = `https://newsapi.org/v2/everything?q=palestine&pageSize=4&apikey=${API_KEY}`
+    const response = await fetch(apiURL);
+    let data = await response.json();
+    // console.log("dynamic list worked")
+    let articles = data.articles
+    return articles;
 
-  }catch(err){
-      console.log("Error Fetching Data....",err)
-      return []
+  } catch (err) {
+    console.log("Error Fetching Data....", err)
+    return []
   }
 
 
 }
 
+let getBusiness = async () => {
+  try {
+    const apiURL = `https://newsapi.org/v2/everything?q=business&pageSize=3&apikey=${API_KEY}`
+    const response = await fetch(apiURL);
+    let data = await response.json();
+    console.log("dynamic list worked")
+    let articles = data.articles
+    return articles;
+
+  } catch (err) {
+    console.log("Error Fetching Data....", err)
+    return []
+  }
+}
+
+
+let getSports = async () => {
+  try {
+    const apiURL = `https://newsapi.org/v2/everything?q=sports&pageSize=3&apikey=${API_KEY}`
+    const response = await fetch(apiURL);
+    let data = await response.json();
+    console.log("dynamic list worked")
+    let articles = data.articles
+    return articles;
+
+  } catch (err) {
+    console.log("Error Fetching Data....", err)
+    return []
+  }
+}
+
 
 // newsquery();
+
+
+// dynamic slides
 
 let dynamicSlide = async (articles) => {
   slides.innerHTML = ""
@@ -241,7 +254,7 @@ let dynamicSlide = async (articles) => {
     const desc = document.createElement('p')
     const link = document.createElement('a')
     textArea.appendChild(head)
-    textArea.appendChild(desc)    
+    textArea.appendChild(desc)
     textArea.appendChild(link)
     slideImage.appendChild(textArea)
     slideContainer.appendChild(slideImage)
@@ -254,12 +267,8 @@ let dynamicSlide = async (articles) => {
     slideImage.style.backgroundImage = `url("${article.urlToImage}")`;
     head.innerText = shortTitle;
     desc.innerText = shortDes;
-    link.innerText ="Read More..."
-    console.log(slides.innerHTML)
-    slides.addEventListener('click',{
-      window
-    })
-    
+    link.innerText = "Read More..."
+
 
 
 
@@ -269,12 +278,15 @@ let dynamicSlide = async (articles) => {
 }
 
 
+
+// DYNAMIC LIST
+
 let list = document.querySelector('.list')
 
-let dynamicList =async(articles) =>{
+let dynamicList = async (articles) => {
   list.innerHTML = ""
-  articles.forEach((article)=>{
-   
+  articles.forEach((article) => {
+
     let card = document.createElement('div')
     card.classList.add('card-sm')
     let img = document.createElement('img')
@@ -298,10 +310,89 @@ let dynamicList =async(articles) =>{
 
 
   })
-      // head.innerText="Trending Now"
-   // let head = document.createElement('h3')
-     // list.appendChild(head)
+  // head.innerText="Trending Now"
+  // let head = document.createElement('h3')
+  // list.appendChild(head)
 
+}
+
+
+
+// DYNAMIC MAIN NEWS
+
+let mainNews = document.querySelector("#mainNews")
+
+
+let dynamicMain = async (articles) => {
+  mainNews.innerHTML = "";
+  mainNews.innerHTML = ` <div class="container">
+  <div class="text-container">
+    <h1>${articles[1].title}</h1>
+    <p>
+    ${articles[1].description}
+    </p>
+  </div>
+  <img
+    src="${articles[1].urlToImage}"
+    alt=""
+  />
+</div>`
+
+
+}
+
+
+
+
+
+
+
+let business = document.querySelector("#editors-pick .container .flex-container")
+// console.log(business)  
+
+let businessSection = async (articles) => {
+  business.innerHTML = "";
+  articles.forEach((article) => {
+
+    let shortTitle = article.title.length > 10 ? article.title.slice(0, 15) + "..." : article.title
+    let shortDes = article.description.length > 25 ? article.description.slice(0, 25) + "..." : article.description;
+    let card = document.createElement('div')
+    card.classList.add("card")
+    let image = document.createElement('img')
+    image.src = article.urlToImage;
+    let heading = document.createElement('h4')
+    let subtext = document.createElement('p')
+    subtext.innerText = shortDes
+    heading.innerText = shortTitle
+    card.appendChild(image)
+    card.appendChild(heading)
+    card.appendChild(subtext)
+    business.appendChild(card)
+  
+  })
+  console.log("worked")
+}
+
+let sports = document.querySelector("#sports-pick")
+
+let sportSection = async(articles) =>{
+  sportSection.innerHTML = ""
+  articles.forEach((article) =>{
+    let shortTitle = article.title.length > 10 ? article.title.slice(0, 15) + "..." : article.title
+    let shortDes = article.description.length > 25 ? article.description.slice(0, 25) + "..." : article.description;
+    let card = document.createElement('div')
+    card.classList.add("card")
+    let image = document.createElement('img')
+    image.src = article.urlToImage;
+    let heading = document.createElement('h4')
+    let subtext = document.createElement('p')
+    subtext.innerText = shortDes
+    heading.innerText = shortTitle
+    card.appendChild(image)
+    card.appendChild(heading)
+    card.appendChild(subtext)
+    business.appendChild(card)
+  })
 }
 
 
@@ -316,22 +407,25 @@ let dynamicList =async(articles) =>{
 
 
 
-// final done 
 
+(async () => {
+  try {
+    let articles = await getNews()
+    let articlesTwo = await newsquery()
+    let businessNews = await getBusiness()
+    let sportsNews = await getSports()
+    console.log(businessNews)
+    dynamicSlide(articles)
+    dynamicList(articlesTwo)
+    dynamicMain(articlesTwo);
+    businessSection(businessNews)
+    sportSection(sportsNews)
+  } catch (err) {
+    console.error("error fetching data...", err)
+  }
+}
+)();
 
-//
-//(async () => {
-//  try {
-//    let articles = await getNews()
-//    let articlesTwo = await newsquery()
-//    dynamicSlide(articles)
-//    dynamicList(articlesTwo)
-//  } catch (err) {
-//    console.error("error fetching data...", err)
-//  }
-//}
-//)();
-//
 
 
 
