@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The News</title>
+
+    <!-- ============         Google Fonts   =============         -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- swiper js -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+    <!-- csss -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- nav mobile -->
+    <nav id="mobile-nav">
+      <div class="nav-container">
+        <div class="nav-top">
+          <div id="top-left">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div id="top-center">
+            <h1>The News</h1>
+          </div>
+          <div id="top-right">
+            <span>Dec 12</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Desktop-nav -->
+    <nav id="desktop-nav">
+      <div class="desktop-nav-container">
+        <div class="nav-top">
+          <div class="top-left">
+            <i class="fa-solid fa-bars"></i>
+            <input type="text" placeholder="Search" />
+            <i class="fa-solid fa-magnifying-glass" id="search"></i>
+          </div>
+          <div class="top-center">
+            <p>Your one destination for all kind of news</p>
+          </div>
+          <div class="top-right">
+            <p>Subscribe</p>
+            <p>Log in</p>
+          </div>
+        </div>
+        <div class="nav-center">
+          <div class="mid-left">
+            <p id="date">February 14th, 2024</p>
+            <p id="day">Wednesday</p>
+          </div>
+          <div class="mid-center">
+            <h1>The News</h1>
+          </div>
+          <div class="mid-right">
+            <p id="temperature">weather here</p>
+            <p id="timeBar">Time here</p>
+          </div>
+        </div>
+        <div class="nav-bottom">
+          <p><a href="#">World</a></p>
+          <p><a href="#">Business</a></p>
+          <p><a href="#">Finance</a></p>
+          <p><a href="#">Science</a></p>
+          <p><a href="#">Politics</a></p>
+          <p><a href="#">Entertainment</a></p>
+          <p><a href="#">Sports</a></p>
+          <p><a href="#">Arts</a></p>
+        </div>
+      </div>
+    </nav>
+
+    <section id="hero">
+      <div class="container">
+        <div class="carousel">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="slides">
+                  <div class="text-section">
+                    <h2>News Title Here</h2>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Quia labore rerum repellendus voluptatem quo. Quaerat.
+                    </p>
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slides">
+                  <div class="text-section">
+                    <h2>News Title Here</h2>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Quia labore rerum repellendus voluptatem quo. Quaerat.
+                    </p>
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slides">
+                  <div class="text-section">
+                    <h2>News Title Here</h2>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Quia labore rerum repellendus voluptatem quo. Quaerat.
+                    </p>
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slides">
+                  <div class="text-section">
+                    <h2>News Title Here</h2>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Quia labore rerum repellendus voluptatem quo. Quaerat.
+                    </p>
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="slides">
+                  <div class="text-section">
+                    <h2>News Title Here</h2>
+                    <p>
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Quia labore rerum repellendus voluptatem quo. Quaerat.
+                    </p>
+                    <a href="#">Read more...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="list">
+          <h3>Trending Today</h3>
+          <div class="card-sm">
+            <img
+              src="https://images.unsplash.com/photo-1699845361165-bbdb050b34b2?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fEJKSk10dGVESkE0fHxlbnwwfHx8fHw%3D"
+              alt=""
+            />
+            <div class="list-text">
+              <h4>News heading here</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                hic.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-sm">
+            <img
+              src="https://images.unsplash.com/photo-1699845361165-bbdb050b34b2?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fEJKSk10dGVESkE0fHxlbnwwfHx8fHw%3D"
+              alt=""
+            />
+            <div class="list-text">
+              <h4>News heading here</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                hic.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-sm">
+            <img
+              src="https://images.unsplash.com/photo-1699845361165-bbdb050b34b2?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fEJKSk10dGVESkE0fHxlbnwwfHx8fHw%3D"
+              alt=""
+            />
+            <div class="list-text">
+              <h4>News heading here</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                hic.
+              </p>
+            </div>
+          </div>
+          <div class="card-sm">
+            <img
+              src="https://images.unsplash.com/photo-1699845361165-bbdb050b34b2?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI2fEJKSk10dGVESkE0fHxlbnwwfHx8fHw%3D"
+              alt=""
+            />
+            <div class="list-text">
+              <h4>News heading here</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                hic.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mainNews">
+      <div class="container">
+        <div class="text-container">
+          <h1>Heading for One News Here</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+            reiciendis itaque tempore sint. Voluptatibus odio accusamus omnis.
+            Hic dolorum totam sed quaerat cumque in vero saepe esse cupiditate.
+            Minus rerum distinctio repellat harum, ipsum impedit repellendus
+            cumque error illo corporis magni sint laborum voluptatibus.
+            Reiciendis.
+          </p>
+        </div>
+        <img
+          src="https://images.pexels.com/photos/11842369/pexels-photo-11842369.jpeg?auto=compress&cs=tinysrgb&w=400"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <section id="editors-pick">
+      <div class="container">
+        <h3>Editors Pick</h3>
+        <div class="flex-container">
+          <div class="card">
+            <img
+              src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt=""
+            />
+            <h4>Palestine under sever...</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+              totam dolor eligendi fugiat eos magni!
+            </p>
+          </div>
+          <div class="card">
+            <img
+              src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt=""
+            />
+            <h4>Palestine under sever...</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+              totam dolor eligendi fugiat eos magni!
+            </p>
+          </div>
+
+          <div class="card hidden">
+            <img
+              src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt=""
+            />
+            <h4>Palestine under sever...</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+              totam dolor eligendi fugiat eos magni!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sports-pick">
+      <div class="container">
+        <h3>Sports</h3>
+        <div class="flex-container">
+          <div class="card">
+            <img
+              src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt=""
+            />
+            <h4>Palestine under sever...</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+              totam dolor eligendi fugiat eos magni!
+            </p>
+          </div>
+          <div class="card">
+            <img
+              src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt=""
+            />
+            <h4>Palestine under sever...</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+              totam dolor eligendi fugiat eos magni!
+            </p>
+          </div>
+
+          <div class="card hidden">
+            <img
+              src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+              alt=""
+            />
+            <h4>Palestine under sever...</h4>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+              totam dolor eligendi fugiat eos magni!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="sepia-effect">
+        <div class="container">
+          <h1>"Subscribe our news letter"</h1>
+          <div class="input-sec">
+            <input type="email" placeholder="Email Address Here">
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="more-around">
+      <h3>More around The News</h3>
+      <div class="main">
+        <div class="left-list">
+          <h3>FROM OUR CORRESPONDANTS</h3>
+          <div class="list-card">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+          <div class="list-card light">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+          <div class="list-card">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+          <div class="list-card light">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+          <div class="list-card ">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+          <div class="list-card light">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+          <div class="list-card">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+          <div class="list-card light">
+            <div class="img"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D" alt=""></div>
+            <div class="text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dignissimos?</p>
+            
+            <p><i>Lorem ipsum dolor sit amet.</i></p></div>
+
+          </div>
+
+          
+        </div>
+        <div class="right-container">
+          <div class="top">
+            <div class="image-back"><img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+              <div class="text">
+                <h3>European Parliament revokes Amazon lobbyist passes</h3>
+                <p>MEP's have accessed the retailer of falling to cooperate with enquiries into it's working practices.</p>
+              </div></div>
+           
+
+          </div>
+          <div class="bottom">
+            <div class="flex-container">
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+                <h4>Raye's path to the Brits: 'It's not been the simplest story'</h4>
+                <span>Entertainment & Arts</span>
+              </div>
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+                <h4>Raye's path to the Brits: 'It's not been the simplest story'</h4>
+                <span>Entertainment & Arts</span>
+              </div>
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+                <h4>Raye's path to the Brits: 'It's not been the simplest story'</h4>
+                <span>Entertainment & Arts</span>
+              </div>
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+                <h4>Raye's path to the Brits: 'It's not been the simplest story'</h4>
+                <span>Entertainment & Arts</span>
+              </div>
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+                <h4>Raye's path to the Brits: 'It's not been the simplest story'</h4>
+                <span>Entertainment & Arts</span>
+              </div>
+              <div class="card">
+                <img src="https://images.unsplash.com/photo-1682686580452-37f1892ee5e8?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8" alt="">
+                <h4>Raye's path to the Brits: 'It's not been the simplest story'</h4>
+                <span>Entertainment & Arts</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+
+    <section id="world">
+      <div class="sepia-effect">
+        <div class="container">
+          <h1>"World Today"</h1>
+          <div class="flex-container">
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt=""
+              />
+              <h4>Palestine under sever...</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+                totam dolor eligendi fugiat eos magni!
+              </p>
+            </div>
+            <div class="card">
+              <img
+                src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt=""
+              />
+              <h4>Palestine under sever...</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+                totam dolor eligendi fugiat eos magni!
+              </p>
+            </div>
+  
+            <div class="card hidden">
+              <img
+                src="https://images.pexels.com/photos/12018417/pexels-photo-12018417.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt=""
+              />
+              <h4>Palestine under sever...</h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+                totam dolor eligendi fugiat eos magni!
+              </p>
+            </div>  
+          </div>
+        </div>
+       </div>
+    </section>
+
+
+
+    
+
+    <!-- scripts -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
