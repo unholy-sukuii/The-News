@@ -248,7 +248,7 @@ body {
   font-size: 1rem;
   /* border: 1px solid red; */
   height: 100%;
-  transition: ease-in-out 850ms;
+  transition: ease 450ms;
 }
 
 .nav-bottom p a:hover {
