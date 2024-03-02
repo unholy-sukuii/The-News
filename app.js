@@ -1,4 +1,6 @@
-// Swiper JS
+/* ================================================= */
+/* ===============     Swiper JS here  ============== */
+/* ================================================= */
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 20,
@@ -18,18 +20,39 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 
+/* ================================================= */
+/* ===============     Search bar     ============== */
+/* ================================================= */
 
-
-// const { Expo } = require("gsap")
 
 let input = document.querySelector(".top-left input");
 let search = document.querySelector("#search");
 
-// console.log(input)
+let count = true;
+search.addEventListener("click", () => {
+  if (count) {
+    gsap.to(input, {
+      width: "100%",
+      ease: Expo.easeInOut,
+      duration: 1,
+    });
+    count = false;
+  } else {
+    gsap.to(input, {
+      width: "0%",
+      ease: Expo.easeInOut,
+      duration: 1,
+    });
+    count = true;
+  }
+});
 
 
+/* =================================================
+   ===============   Date and Time    ============== 
+   ================================================= */
 
-
+//    ACCESSING DOM HERE   // 
 let dateBar = document.querySelector("#date");
 let timeBar = document.querySelector("#timeBar");
 let dayBar = document.querySelector("#day");
@@ -62,38 +85,14 @@ const days = [
   "Friday",
   "Saturday",
 ];
+
 const d = new Date("2024-02-28");
 let month = months[d.getMonth()];
 let day = days[d.getDay()];
 
+
 dateBar.innerText = `${d.getFullYear()} ${month} ${d.getDate()}`;
 dayBar.innerText = `${day}`;
-
-// Search bar vanish
-
-let count = true;
-search.addEventListener("click", () => {
-  if (count) {
-    // console.log("works");
-    gsap.to(input, {
-      width: "100%",
-      ease: Expo.easeInOut,
-      duration: 1,
-    });
-    count = false;
-  } else {
-    // console.log("clicked again");
-    gsap.to(input, {
-      width: "0%",
-      ease: Expo.easeInOut,
-      duration: 1,
-    });
-    count = true;
-  }
-});
-
-
-
 
 
 // Getting current time and date
@@ -127,7 +126,12 @@ function showTime() {
 setInterval(showTime, 1000);
 
 
-// Weather API
+
+
+/* =================================================
+   ===============   WEATHER API      ============== 
+   ================================================= */
+
 const url =
   "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Kathmandu";
 const options = {
@@ -151,20 +155,26 @@ let getWeather = async (city) => {
   }
 }
 
-// getWeather('Hetauda');
+getWeather('Hetauda');
 
 
 
+
+/* =================================================
+   ===============   DYNAMIC NEWS     ============== 
+   ================================================= */
 
 
 class news {
-  constructor(head,des,des,link){
+  constructor(head, des, img, link) {
     this.head = head;
     this.des = des;
     this.img = img;
     this.link = link;
   }
 }
+
+// news(head,des,img,link) -- params/args
 let sportsNews = new news("Scientists Discover New Species of Giant Octopus in the Pacific Ocean",)
 
 
@@ -172,153 +182,368 @@ let sportsNews = new news("Scientists Discover New Species of Giant Octopus in t
 
 
 class mode {
-  constructor(bgcolor,colour,accent,highlight){
-      this.bgcolor = bgcolor;
-      this.colour = colour;
-      this.accent = accent;
-      this.highlight = highlight;
+  constructor(bgcolor, colour, accent, highlight) {
+    this.bgcolor = bgcolor;
+    this.colour = colour;
+    this.accent = accent;
+    this.highlight = highlight;
   }
- 
-  
+
+
 }
 
 
-let darkMode = new mode ("rgb(41, 41, 46)", "whitesmoke",`rgb(52, 49, 49)`,`rgb(136, 12, 12)`);
-let liteMode = new mode ("#e6e1c5", "black",'#e6e1c5')
-
-
-// console.log(darkMode)
 
 let cards = document.querySelectorAll(".card")
 let navbar = document.querySelector('#desktop-nav')
-let img =  document.querySelectorAll("img");
+let img = document.querySelectorAll("img");
 let h3 = document.querySelectorAll('h3')
 let links = document.querySelectorAll('a')
 let span = document.querySelectorAll('span')
 let smCard = document.querySelectorAll('.card-sm');
 let smcardHead = document.querySelector(".list h3");
 let paras = document.querySelectorAll('p')
+let headings = document.querySelectorAll('.headings')
 
-console.log(cards)
-const enableDark = () =>{
-    document.querySelector('body').style.backgroundColor = darkMode.bgcolor
-    cards.forEach(card =>{
-    card.style.backgroundColor=darkMode.bgcolor;
+
+let darkMode = new mode("rgb(41, 41, 46)", "whitesmoke", `rgb(52, 49, 49)`, `rgb(136, 12, 12)`);
+let liteMode = new mode("#e6e1c5", "black", '#e6e1c5')
+
+let darkButton = document.querySelector("#dark");
+darkButton.style.cursor = 'pointer';
+let liteButton = document.querySelector("#lite")
+liteButton.style.cursor = 'pointer';
+
+const enableDark = () => {
+  document.querySelector('body').style.backgroundColor = darkMode.bgcolor
+  cards.forEach(card => {
+    card.style.backgroundColor = darkMode.bgcolor;
     card.style.color = darkMode.colour;
     console.log(darkMode.bgcolor)
-    })    
-    img.forEach(image =>{
-      image.style.filter = "grayscale(1)";
-    })    
-    navbar.style.backgroundColor = darkMode.bgcolor
-    navbar.style.color = darkMode.colour
+  })
+  img.forEach(image => {
+    image.style.filter = "grayscale(1)";
+  })
+  navbar.style.backgroundColor = darkMode.bgcolor
+  navbar.style.color = darkMode.colour
 
-    h3.forEach(h =>{
-      h.style.color = darkMode.colour;
-    })
-    links.forEach(link =>{
-      link.style.color = darkMode.colour;
-    })
-    span.forEach(Element =>{
-      Element.style.color = darkMode.colour;
-    })
-    document.querySelector('#mainNews').style.color = darkMode.colour;
-    document.querySelector("#footer").style.backgroundColor = darkMode.bgcolor;
-    dayBar.style.color = darkMode.colour;
-    dateBar.style.color = darkMode.colour;
-    temp.style.color = darkMode.colour
-    timeBar.style.color = darkMode.colour;
-    smCard.forEach(card=>{
-      card.style.backgroundColor = darkMode.accent;
-      card.style.color = darkMode.colour;
-    })
-    smcardHead.style.backgroundColor = darkMode.highlight;
-    paras.forEach(p=>
-      {
-        p.style.color = darkMode.colour;
-      })
+  h3.forEach(h => {
+    h.style.color = darkMode.colour;
+  })
+  links.forEach(link => {
+    link.style.color = darkMode.colour;
+  })
+  span.forEach(Element => {
+    Element.style.color = darkMode.colour;
+  })
+  document.querySelector('#mainNews').style.color = darkMode.colour;
+  document.querySelector("#footer").style.backgroundColor = darkMode.bgcolor;
+  dayBar.style.color = darkMode.colour;
+  dateBar.style.color = darkMode.colour;
+  temp.style.color = darkMode.colour
+  timeBar.style.color = darkMode.colour;
+  smCard.forEach(card => {
+    card.style.backgroundColor = darkMode.accent;
+    card.style.color = darkMode.colour;
+  })
+  smcardHead.style.backgroundColor = darkMode.highlight;
+  paras.forEach(p => {
+    p.style.color = darkMode.colour;
+  })
 }
-const enableLite =() =>{
-  const disableDark = () => {
-    // Reset body background color
-    document.querySelector('body').style.backgroundColor = '';
 
-    // Reset card background color and text color
-    cards.forEach(card => {
-        card.style.backgroundColor = '';
-        card.style.color = '';
-    });
+const disableDark = () => {
+  document.querySelector('body').style.backgroundColor = '';
+  cards.forEach(card => {
+    card.style.backgroundColor = liteMode.bgcolor;
+    card.style.color = liteMode.colour;
+  });
+  img.forEach(image => {
+    image.style.filter = 'sepia(2';
+  });
 
-    // Reset grayscale filter on images
-    img.forEach(image => {
-        image.style.filter = '';
-    });
+  navbar.style.backgroundColor = liteMode.bgcolor;
+  navbar.style.color = liteMode.colour;
 
-    // Reset navbar background color and text color
-    navbar.style.backgroundColor = '';
-    navbar.style.color = '';
+  h3.forEach(h => {
+    h.style.color = ' ';
+  });
+  links.forEach(link => {
+    link.style.color = '';
+  });
 
-    // Reset text color for headings
-    h3.forEach(h => {
-        h.style.color = " ";
-    });
+  span.forEach(Element => {
+    Element.style.color = '';
+  });
 
-    // Reset text color for links
-    links.forEach(link => {
-        link.style.color = '';
-    });
+  paras.forEach(p => {
+    p.style.color = '';
+  });
 
-    // Reset text color for spans
-    span.forEach(Element => {
-        Element.style.color = '';
-    });
+  document.querySelector('#mainNews').style.color = '';
+  document.querySelector("#footer").style.backgroundColor = '';
 
-    // Reset text color for paragraphs
-    paras.forEach(p => {
-        p.style.color = '';
-    });
+  dayBar.style.color = '';
+  dateBar.style.color = '';
+  temp.style.color = '';
+  timeBar.style.color = '';
 
-    // Reset text color for main news section
-    document.querySelector('#mainNews').style.color = '';
+  smCard.forEach(card => {
+    card.style.backgroundColor = '';
+    card.style.color = '';
+  });
+  smcardHead.style.backgroundColor = '';
+  cards.forEach(card => {
+    card.style.color = '';
+  });
+  headings.forEach(function (heading) {
+    heading.style.color = liteMode.colour;
+  })
 
-    // Reset background color for footer
-    document.querySelector("#footer").style.backgroundColor = '';
-
-    // Reset text color for dayBar, dateBar, temperature, and timeBar
-    dayBar.style.color = '';
-    dateBar.style.color = '';
-    temp.style.color = '';
-    timeBar.style.color = '';
-
-    // Reset background color and text color for small cards and their headers
-    smCard.forEach(card => {
-        card.style.backgroundColor = '';
-        card.style.color = '';
-    });
-    smcardHead.style.backgroundColor = '';
-
-    // Reset text color for all elements
-    cards.forEach(card => {
-        card.style.color = '';
-    });
 };
 
-}
 
 
 
 
 
-let dark = document.querySelector("#dark");
-dark.style.cursor = 'pointer';
-let lite = document.querySelector("#lite")
-lite.style.cursor = 'pointer';
 
-dark.addEventListener('click',()=>{
+darkButton.addEventListener('click', () => {
   enableDark();
 
 })
 
-lite.addEventListener('click',()=>{
-  enableLite();
+liteButton.addEventListener('click', () => {
+  disableDark();
 })
+
+
+
+/* =================================================
+   ===============   DYNAMIC NEWS     ============== 
+   ================================================= */
+
+
+
+
+
+const API_KEY = "fb0f24207fc74c02a2b84801b481c744"
+
+
+
+
+let sportNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=sports&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    return finalData;
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+
+
+
+let businessNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=business&pageSize=6&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // console.log(data.articles);
+
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    return finalData;
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// businessNews();
+
+let financeNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=finance&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    return finalData;
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+
+// financeNews();
+
+let earth = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=global-warming&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 2)
+    console.log(finalData, "this is ");
+    return finalData;
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// earth();
+
+let mainNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=palestine&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 1)
+    console.log(finalData, "this is ");
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// mainNews();
+
+let slideNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=politics&pageSize=15&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 7)
+    console.log(finalData, "this is ");
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// slideNews();
+
+let trendingNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=trending&pageSize=15&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 9)
+    console.log(finalData, "this is ");
+
+  } catch (err) {
+    console.log(err)
+  }
+}
+// trendingNews();
+
+let worldNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=world&pageSize=5&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    console.log(finalData, "this is ");
+
+  } catch (err) {
+    console.log(err)
+  }
+}
+// worldNews();
+
+let aroundNewsTop = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=hollywood&pageSize=5&apikey=${API_KEY}`;
+    const response = await fetch(apiUrl)
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 1)
+    console.log(finalData, "this is ");
+  } catch (err) {
+    console.log(err)
+  }
+}
+// aroundNewsTop();
+
+let aroundNewsBottom = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=entertainment&pageSize=12&apikey=${API_KEY}`;
+    const response = await fetch(apiUrl)
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 6)
+    console.log(finalData, "this is ");
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+// aroundNewsBottom();
+
+let financeClutter = document.querySelector("#finance .container .flex-container")
+
+const financeBlock = (articles) => {
+  financeClutter.innerHTML = "";
+  articles.forEach(function (article) {
+    let shortTitle = article.title.length > 25 ? article.title.slice(0, 25) + "..." : article.title;
+    let shortDes = article.description.length > 120 ? article.description.slice(0, 120) + "..." : article.description
+    let div = document.createElement('div')
+    div.classList.add("card")
+    let image = document.createElement('img')
+    image = article.urlToImage;
+    let headline = document.createElement('h4')
+    headline.textContent = shortTitle;
+    let description = document.createElement('p')
+    description.textContent = shortDes;
+    div.appendChild(image);
+    div.appendChild(headline)
+    div.appendChild(description)
+    financeClutter.appendChild(div)
+    div.addEventListener('click',()=>{
+      window.open(article.url,"_blank");
+    })
+
+
+  })
+}
+
+
+(async()=>{
+try{
+  let financeArticles = await financeNews()
+  // financeBlock(financeArticles);
+  console.log(financeArticles)
+}catch(err){
+  console.log(err)
+}
+})();
