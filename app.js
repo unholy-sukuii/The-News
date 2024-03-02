@@ -175,7 +175,251 @@ class news {
 }
 
 // news(head,des,img,link) -- params/args
-let sportsNews = new news("Scientists Discover New Species of Giant Octopus in the Pacific Ocean",)
+
+
+
+
+
+
+
+/* =================================================
+   ===============   DYNAMIC NEWS     ============== 
+   ================================================= */
+
+
+
+
+
+const API_KEY = "fb0f24207fc74c02a2b84801b481c744"
+
+
+
+
+let sportNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=sports&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    return finalData;
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+
+
+
+let businessNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=business&pageSize=6&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+
+
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    return finalData;
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// businessNews();
+
+let financeNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=finance&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    return finalData;
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+
+// financeNews();
+
+let earth = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=global-warming&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 2)
+    console.log(finalData, "this is ");
+    return finalData;
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// earth();
+
+let mainNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=palestine&pageSize=10&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 1)
+    console.log(finalData, "this is ");
+    return finalData;
+
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// mainNews();
+
+let slideNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/top-headlines?q=politics&pageSize=15&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json();
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 7)
+    console.log(finalData, "this is ");
+    return finalData;
+  } catch (err) {
+    console.error("Error Fetching Data....", err)
+    return []
+  }
+}
+// slideNews();
+
+let trendingNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=trending&pageSize=15&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 9)
+    console.log(finalData, "this is ");
+    return finalData;
+
+  } catch (err) {
+    console.log(err)
+  }
+}
+// trendingNews();
+
+let worldNews = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=world&pageSize=5&apikey=${API_KEY}`
+    const response = await fetch(apiUrl);
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 3)
+    console.log(finalData, "this is ");
+    return finalData;
+
+  } catch (err) {
+    console.log(err)
+  }
+}
+// worldNews();
+
+let aroundNewsTop = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=hollywood&pageSize=5&apikey=${API_KEY}`;
+    const response = await fetch(apiUrl)
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 1)
+    console.log(finalData, "this is ");
+    return finalData;
+  } catch (err) {
+    console.log(err)
+  }
+}
+// aroundNewsTop();
+
+let aroundNewsBottom = async () => {
+  try {
+    const apiUrl = `https://newsapi.org/v2/everything?q=entertainment&pageSize=12&apikey=${API_KEY}`;
+    const response = await fetch(apiUrl)
+    let data = await response.json()
+    // filtering articles with no urlToImage
+    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
+    // limiting the array length 
+    const finalData = articlesWithImages.slice(0, 6)
+    console.log(finalData, "this is ");
+    return finalData;
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+// aroundNewsBottom();
+
+let financeClutter = document.querySelector("#finance .container .flex-container")
+
+const financeBlock = (articles) => {
+  financeClutter.innerHTML = "";
+  articles.forEach(function (article) {
+    let shortTitle = article.title.length > 25 ? article.title.slice(0, 25) + "..." : article.title;
+    let shortDes = article.description.length > 120 ? article.description.slice(0, 120) + "..." : article.description
+    let div = document.createElement('div')
+    div.classList.add("card")
+    let image = document.createElement('img')
+    image.src = article.urlToImage;
+    let headline = document.createElement('h4')
+    headline.textContent = shortTitle;
+    let description = document.createElement('p')
+    description.textContent = shortDes;
+    div.appendChild(image);
+    div.appendChild(headline)
+    div.appendChild(description)
+    financeClutter.appendChild(div)
+    div.addEventListener('click', () => {
+      window.open(article.url, "_blank");
+    })
+
+
+  })
+}
+
+
+(async () => {
+  try {
+    let financeArticles = await financeNews()
+    financeBlock(financeArticles);
+    console.log(financeArticles)
+  } catch (err) {
+    console.log(err)
+  }
+})();
+
+
+
+
 
 
 
@@ -316,234 +560,3 @@ darkButton.addEventListener('click', () => {
 liteButton.addEventListener('click', () => {
   disableDark();
 })
-
-
-
-/* =================================================
-   ===============   DYNAMIC NEWS     ============== 
-   ================================================= */
-
-
-
-
-
-const API_KEY = "fb0f24207fc74c02a2b84801b481c744"
-
-
-
-
-let sportNews = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/top-headlines?q=sports&pageSize=10&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json();
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 3)
-    return finalData;
-
-  } catch (err) {
-    console.error("Error Fetching Data....", err)
-    return []
-  }
-}
-
-
-
-let businessNews = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/top-headlines?q=business&pageSize=6&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json();
-    // console.log(data.articles);
-
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 3)
-    return finalData;
-
-  } catch (err) {
-    console.error("Error Fetching Data....", err)
-    return []
-  }
-}
-// businessNews();
-
-let financeNews = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/top-headlines?q=finance&pageSize=10&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json();
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 3)
-    return finalData;
-
-  } catch (err) {
-    console.error("Error Fetching Data....", err)
-    return []
-  }
-}
-
-// financeNews();
-
-let earth = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/everything?q=global-warming&pageSize=10&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json();
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 2)
-    console.log(finalData, "this is ");
-    return finalData;
-  } catch (err) {
-    console.error("Error Fetching Data....", err)
-    return []
-  }
-}
-// earth();
-
-let mainNews = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/everything?q=palestine&pageSize=10&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json();
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 1)
-    console.log(finalData, "this is ");
-
-  } catch (err) {
-    console.error("Error Fetching Data....", err)
-    return []
-  }
-}
-// mainNews();
-
-let slideNews = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/top-headlines?q=politics&pageSize=15&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json();
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 7)
-    console.log(finalData, "this is ");
-  } catch (err) {
-    console.error("Error Fetching Data....", err)
-    return []
-  }
-}
-// slideNews();
-
-let trendingNews = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/everything?q=trending&pageSize=15&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json()
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 9)
-    console.log(finalData, "this is ");
-
-  } catch (err) {
-    console.log(err)
-  }
-}
-// trendingNews();
-
-let worldNews = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/everything?q=world&pageSize=5&apikey=${API_KEY}`
-    const response = await fetch(apiUrl);
-    let data = await response.json()
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 3)
-    console.log(finalData, "this is ");
-
-  } catch (err) {
-    console.log(err)
-  }
-}
-// worldNews();
-
-let aroundNewsTop = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/everything?q=hollywood&pageSize=5&apikey=${API_KEY}`;
-    const response = await fetch(apiUrl)
-    let data = await response.json()
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 1)
-    console.log(finalData, "this is ");
-  } catch (err) {
-    console.log(err)
-  }
-}
-// aroundNewsTop();
-
-let aroundNewsBottom = async () => {
-  try {
-    const apiUrl = `https://newsapi.org/v2/everything?q=entertainment&pageSize=12&apikey=${API_KEY}`;
-    const response = await fetch(apiUrl)
-    let data = await response.json()
-    // filtering articles with no urlToImage
-    const articlesWithImages = data.articles.filter(article => article.urlToImage !== null);
-    // limiting the array length 
-    const finalData = articlesWithImages.slice(0, 6)
-    console.log(finalData, "this is ");
-  } catch (err) {
-    console.log(err)
-  }
-}
-
-// aroundNewsBottom();
-
-let financeClutter = document.querySelector("#finance .container .flex-container")
-
-const financeBlock = (articles) => {
-  financeClutter.innerHTML = "";
-  articles.forEach(function (article) {
-    let shortTitle = article.title.length > 25 ? article.title.slice(0, 25) + "..." : article.title;
-    let shortDes = article.description.length > 120 ? article.description.slice(0, 120) + "..." : article.description
-    let div = document.createElement('div')
-    div.classList.add("card")
-    let image = document.createElement('img')
-    image = article.urlToImage;
-    let headline = document.createElement('h4')
-    headline.textContent = shortTitle;
-    let description = document.createElement('p')
-    description.textContent = shortDes;
-    div.appendChild(image);
-    div.appendChild(headline)
-    div.appendChild(description)
-    financeClutter.appendChild(div)
-    div.addEventListener('click',()=>{
-      window.open(article.url,"_blank");
-    })
-
-
-  })
-}
-
-
-(async()=>{
-try{
-  let financeArticles = await financeNews()
-  // financeBlock(financeArticles);
-  console.log(financeArticles)
-}catch(err){
-  console.log(err)
-}
-})();
