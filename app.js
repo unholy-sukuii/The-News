@@ -157,28 +157,168 @@ let getWeather = async (city) => {
 
 
 
-
-
-
-
 class news {
-  constructor(name, image, description, link) {
-    name = this.name;
-    image = this.image;
-    description = this.description;
-    link = this.description;
+  constructor(head,des,des,link){
+    this.head = head;
+    this.des = des;
+    this.img = img;
+    this.link = link;
   }
 }
+let sportsNews = new news("Scientists Discover New Species of Giant Octopus in the Pacific Ocean",)
+
 
 
 
 
 class mode {
-  constructor(bgcolor, color) {
-    bgcolor = this.bgcolor;
-    color = this.color;
+  constructor(bgcolor,colour,accent,highlight){
+      this.bgcolor = bgcolor;
+      this.colour = colour;
+      this.accent = accent;
+      this.highlight = highlight;
   }
+ 
+  
 }
 
-let darkMode = new mode(`rgb(30, 29, 29)`, "#e6e1c5");
-let liteMode = new mode("#e6e1c5",`rgb(30, 29, 29)`)
+
+let darkMode = new mode ("rgb(41, 41, 46)", "whitesmoke",`rgb(52, 49, 49)`,`rgb(136, 12, 12)`);
+let liteMode = new mode ("#e6e1c5", "black",'#e6e1c5')
+
+
+// console.log(darkMode)
+
+let cards = document.querySelectorAll(".card")
+let navbar = document.querySelector('#desktop-nav')
+let img =  document.querySelectorAll("img");
+let h3 = document.querySelectorAll('h3')
+let links = document.querySelectorAll('a')
+let span = document.querySelectorAll('span')
+let smCard = document.querySelectorAll('.card-sm');
+let smcardHead = document.querySelector(".list h3");
+let paras = document.querySelectorAll('p')
+
+console.log(cards)
+const enableDark = () =>{
+    document.querySelector('body').style.backgroundColor = darkMode.bgcolor
+    cards.forEach(card =>{
+    card.style.backgroundColor=darkMode.bgcolor;
+    card.style.color = darkMode.colour;
+    console.log(darkMode.bgcolor)
+    })    
+    img.forEach(image =>{
+      image.style.filter = "grayscale(1)";
+    })    
+    navbar.style.backgroundColor = darkMode.bgcolor
+    navbar.style.color = darkMode.colour
+
+    h3.forEach(h =>{
+      h.style.color = darkMode.colour;
+    })
+    links.forEach(link =>{
+      link.style.color = darkMode.colour;
+    })
+    span.forEach(Element =>{
+      Element.style.color = darkMode.colour;
+    })
+    document.querySelector('#mainNews').style.color = darkMode.colour;
+    document.querySelector("#footer").style.backgroundColor = darkMode.bgcolor;
+    dayBar.style.color = darkMode.colour;
+    dateBar.style.color = darkMode.colour;
+    temp.style.color = darkMode.colour
+    timeBar.style.color = darkMode.colour;
+    smCard.forEach(card=>{
+      card.style.backgroundColor = darkMode.accent;
+      card.style.color = darkMode.colour;
+    })
+    smcardHead.style.backgroundColor = darkMode.highlight;
+    paras.forEach(p=>
+      {
+        p.style.color = darkMode.colour;
+      })
+}
+const enableLite =() =>{
+  const disableDark = () => {
+    // Reset body background color
+    document.querySelector('body').style.backgroundColor = '';
+
+    // Reset card background color and text color
+    cards.forEach(card => {
+        card.style.backgroundColor = '';
+        card.style.color = '';
+    });
+
+    // Reset grayscale filter on images
+    img.forEach(image => {
+        image.style.filter = '';
+    });
+
+    // Reset navbar background color and text color
+    navbar.style.backgroundColor = '';
+    navbar.style.color = '';
+
+    // Reset text color for headings
+    h3.forEach(h => {
+        h.style.color = " ";
+    });
+
+    // Reset text color for links
+    links.forEach(link => {
+        link.style.color = '';
+    });
+
+    // Reset text color for spans
+    span.forEach(Element => {
+        Element.style.color = '';
+    });
+
+    // Reset text color for paragraphs
+    paras.forEach(p => {
+        p.style.color = '';
+    });
+
+    // Reset text color for main news section
+    document.querySelector('#mainNews').style.color = '';
+
+    // Reset background color for footer
+    document.querySelector("#footer").style.backgroundColor = '';
+
+    // Reset text color for dayBar, dateBar, temperature, and timeBar
+    dayBar.style.color = '';
+    dateBar.style.color = '';
+    temp.style.color = '';
+    timeBar.style.color = '';
+
+    // Reset background color and text color for small cards and their headers
+    smCard.forEach(card => {
+        card.style.backgroundColor = '';
+        card.style.color = '';
+    });
+    smcardHead.style.backgroundColor = '';
+
+    // Reset text color for all elements
+    cards.forEach(card => {
+        card.style.color = '';
+    });
+};
+
+}
+
+
+
+
+
+let dark = document.querySelector("#dark");
+dark.style.cursor = 'pointer';
+let lite = document.querySelector("#lite")
+lite.style.cursor = 'pointer';
+
+dark.addEventListener('click',()=>{
+  enableDark();
+
+})
+
+lite.addEventListener('click',()=>{
+  enableLite();
+})
