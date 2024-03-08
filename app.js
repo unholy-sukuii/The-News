@@ -736,24 +736,24 @@ const financeBlock = (articles) => {
 
 
 
-(async () => {
-  try {
-    let financeArticles = await financeNews()
-    let businessArticles = await businessNews()
-    let sportsArticles = await sportNews()
-    let mainNewsArticles = await mainNews()
-    let aroundNewsBottomArticles = await aroundNewsBottom();
+// (async () => {
+//   try {
+//     let financeArticles = await financeNews()
+//     let businessArticles = await businessNews()
+//     let sportsArticles = await sportNews()
+//     let mainNewsArticles = await mainNews()
+//     let aroundNewsBottomArticles = await aroundNewsBottom();
 
-    mainNewsBlock(mainNewsArticles)
-    aroundNewsBottomBlock(aroundNewsBottomArticles)
-    sportsBlock(sportsArticles, "this is the one")
-    financeBlock(financeArticles);
-    businessBlock(businessArticles);
-    // console.log(sportsArticles);
-  } catch (err) {
-    console.log(err)
-  }
-})();
+//     mainNewsBlock(mainNewsArticles)
+//     aroundNewsBottomBlock(aroundNewsBottomArticles)
+//     sportsBlock(sportsArticles, "this is the one")
+//     financeBlock(financeArticles);
+//     businessBlock(businessArticles);
+//     // console.log(sportsArticles);
+//   } catch (err) {
+//     console.log(err)
+//   }
+// })();
 
 
 
