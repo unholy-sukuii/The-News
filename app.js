@@ -244,7 +244,7 @@ const days = [
   "Saturday",
 ];
 
-const d = new Date("2024-02-28");
+const d = new Date();
 let month = months[d.getMonth()];
 let day = days[d.getDay()];
 
